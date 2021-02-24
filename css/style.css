@@ -39,7 +39,6 @@ input[type="radio"].visually-hidden {
   justify-content: space-between;
   align-items: center;
   max-width: 1200px;
-	min-width: 900px;
   list-style: none;
 }
 
@@ -64,9 +63,12 @@ input[type="radio"].visually-hidden {
   background-repeat: no-repeat;
 }
 
-.logo-container a {
-  margin: 0 auto;
-  display: block;
+.logo-link {
+	margin: 0 auto;
+	display: block;
+	text-align: center;
+	text-decoration: none;
+	color: #000000;
 }
 
 .menu-navigation  {
@@ -78,9 +80,9 @@ input[type="radio"].visually-hidden {
   justify-content: space-between;
   align-items: center;
   max-width: 1200px;
-	min-width: 900px;
   list-style: none;
-  font-size: 20px;
+  font-size: 1.3em;
+	line-height: 1.3em;
   text-align: center;
 }
 
@@ -99,7 +101,6 @@ input[type="radio"].visually-hidden {
 
 .main-container {
   max-width: 1200px;
-	min-width: 900px;
   margin: 0 auto;
   margin-top: 60px;
   display: flex;
@@ -176,7 +177,6 @@ margin-top: 0;
   padding-top: 30px;
   padding-bottom: 30px;
   max-width: 1200px;
-	min-width: 900px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -325,4 +325,31 @@ margin-top: 0;
 	width: 44px;
 	height: 44px;
 	background-image: url(../pic/social-em.png);
+}
+
+@media (max-width:1200px) {
+	.logo-container {background-image:none;}
+	.site-navigation {padding: 10px 30px;}
+	.menu-navigation {padding: 0 30px;}
+	.main-container {padding: 0 30px;}
+	.footer-container {padding: 30px;}
+	.menu-navigation {font-size: 1.2em;}
+}
+
+@media (max-width:900px) {
+	.logo-link img {display: none;}
+	.logo-link::before {
+		content: 'Во свете Библии';
+		display: block;
+		font-size: 3em;
+		font-weight: bold;
+	}
+	.logo-link::after {
+		content: 'Православный Библейский сайт';
+		display: block;
+		font-size: 1.5em;
+		margin-top: 15px;
+	}
+	.menu-navigation {font-size: 1em;}
+	.site-navigation {font-size: 1em;}
 }
