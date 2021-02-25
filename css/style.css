@@ -90,7 +90,7 @@ input[type="radio"].visually-hidden {
 
 .mobile-menu {
 	display: none;
-	padding: 0 20px;
+	padding: 0 10px;
 	margin: 20px 20px 0 20px;
 	border: 1px solid #333333;
 	background-color: #ffffff;
@@ -98,6 +98,7 @@ input[type="radio"].visually-hidden {
 
 .mobile-navigation a {
 	color: #000000;
+	font-size: 1.1em;
 }
 
 .menu-navigation  {
@@ -137,9 +138,11 @@ input[type="radio"].visually-hidden {
   justify-content: space-between;
 }
 
-.sidebar-left,
-.sidebar-right {
-  width: 150px;
+.orthodoxy-label,
+.answers-label,
+.orthodoxy,
+.answers {
+	display: none;
 }
 
 .sidebar-left h2,
@@ -390,7 +393,10 @@ input[type="radio"].visually-hidden {
 
 @media (max-width:768px) {
 	body.lock {overflow: hidden;}
-	.main-container {padding: 0;}
+	.main-container {
+		padding: 0;
+		margin-top: 20px;
+	}
 	.logo-container {padding: 70px 0 30px 0;}
 	.logo-link::before {font-size: 2em;}
 	.logo-link::after {
@@ -477,16 +483,70 @@ input[type="radio"].visually-hidden {
 	.sidebar-right {display: none;}
 	.library {display: none;}
 	.mobile-menu {display: block;}
-	.mobile-navigation {display: none;}
+	.mobile-navigation {
+		display: none;
+		list-style: none;
+		padding: 0;
+		padding-top: 10px;
+		margin: 0 0 10px 0;
+		border-top: 1px dashed #000000;
+	}
 	.library-label {
 		display: block;
-		padding: 10px 10px 10px 0;
+		padding: 10px 0;
 		width: 100%;
-		border-bottom: 1px dashed #000000;
 		font-size: 1.5em;
 	}
 	.library:checked ~ ul {
 		display: block;
-		padding-left: 20px;
 	}
+	.main-container {
+		flex-direction: column;
+		justify-content: flex-start;
+	}
+	.sidebar-left h2,
+	.sidebar-right h2 {display: none;}
+	.sidebar-left,
+	.sidebar-right {
+		padding: 0 10px;
+		margin: 0 20px 0 20px;
+		border: 1px solid #333333;
+		background-color: #ffffff;
+	}
+	.sidebar-left {
+		display: block;
+		order: 1;
+	}
+	.sidebar-right {
+		display: block;
+		order: 2;
+		margin-top: 20px;
+	}
+	.sidebar-list {
+		display: none;
+		margin: 0 0 10px 0;
+		padding-top: 10px;
+		border-top: 1px dashed #000000;
+		font-size: 1.2em;
+	}
+	.main-content {
+		order: 3;
+		margin-top: 20px;
+	}
+	.orthodoxy,
+	.answers {
+		display: none;
+	}
+	.orthodoxy-label,
+	.answers-label {
+		display: block;
+		padding: 10px 0;
+		width: 100%;
+		font-size: 1.5em;
+	}
+	.orthodoxy:checked ~ ul,
+	.answers:checked ~ ul {
+		display: block;
+	}
+
 }
