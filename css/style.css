@@ -25,15 +25,31 @@ input[type="radio"].visually-hidden {
 }
 
 .menu-container {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
   margin: 0 auto;
-  padding: 0;
+  padding: 10px 0;
   width: 100%;
   background-color: #333333;
 }
 
+.menu-burger {
+	display: none;
+}
+
+.menu-burger p {
+	display: block;
+	position: fixed;
+	top: 8px;
+	left: 50px;
+	color: #ffffff;
+}
+
 .site-navigation  {
+	width: 100%;
   margin: 0 auto;
-  padding: 10px 0;
+  padding: 0;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -68,6 +84,19 @@ input[type="radio"].visually-hidden {
 	display: block;
 	text-align: center;
 	text-decoration: none;
+	color: #000000;
+	font-family: 'Georgia', serif;
+}
+
+.mobile-menu {
+	display: none;
+	padding: 0 20px;
+	margin: 20px 20px 0 20px;
+	border: 1px solid #333333;
+	background-color: #ffffff;
+}
+
+.mobile-navigation a {
 	color: #000000;
 }
 
@@ -115,8 +144,8 @@ input[type="radio"].visually-hidden {
 
 .sidebar-left h2,
 .sidebar-right h2 {
-font-size: 20px;
-margin-top: 0;
+	font-size: 20px;
+	margin-top: 0;
 }
 
 .sidebar-list {
@@ -184,6 +213,7 @@ margin-top: 0;
 
 .footer-label {
   width: 300px;
+	margin-bottom: 40px;
 }
 
 .footer-label h2, p {
@@ -328,8 +358,11 @@ margin-top: 0;
 }
 
 @media (max-width:1200px) {
-	.logo-container {background-image:none;}
-	.site-navigation {padding: 10px 30px;}
+	.logo-container {
+		background-image: none;
+		padding: 30px 0 30px 0;
+	}
+	.site-navigation {padding: 0 30px;}
 	.menu-navigation {padding: 0 30px;}
 	.main-container {padding: 0 30px;}
 	.footer-container {padding: 30px;}
@@ -337,11 +370,12 @@ margin-top: 0;
 }
 
 @media (max-width:900px) {
+	.main-content {padding: 0 20px;}
 	.logo-link img {display: none;}
 	.logo-link::before {
 		content: 'Во свете Библии';
 		display: block;
-		font-size: 3em;
+		font-size: 2.8em;
 		font-weight: bold;
 	}
 	.logo-link::after {
@@ -352,4 +386,107 @@ margin-top: 0;
 	}
 	.menu-navigation {font-size: 1em;}
 	.site-navigation {font-size: 1em;}
+}
+
+@media (max-width:768px) {
+	body.lock {overflow: hidden;}
+	.main-container {padding: 0;}
+	.logo-container {padding: 70px 0 30px 0;}
+	.logo-link::before {font-size: 2em;}
+	.logo-link::after {
+		font-size: 1.1em;
+		margin-top: 5px;
+	}
+	.menu-navigation {display: none;}
+	.footer-container {
+		flex-wrap: wrap;
+		padding: 20px;
+	}
+	.menu-container {
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 2;
+	}
+	.menu-burger {
+		margin: 0 0 0 10px;
+		display: block;
+		position: relative;
+		width: 30px;
+		height: 20px;
+		z-index: 3;
+	}
+	.menu-burger span {
+		position: absolute;
+		background-color: #ffffff;
+		left: 0;
+		width: 100%;
+		height: 2px;
+		top: 9px;
+		transition: all 0.3s ease 0s;
+	}
+	.menu-burger::before,
+	.menu-burger::after {
+		content: '';
+		background-color: #ffffff;
+		position: absolute;
+		width: 100%;
+		height: 2px;
+		left: 0;
+		transition: all 0.3s ease 0s;
+	}
+	.menu-burger::before {
+		top: 0;
+	}
+	.menu-burger::after {
+		bottom: 0;
+	}
+	.site-navigation {
+		padding: 10px 0 0 50px;
+		position: fixed;
+		display: block;
+		top: -100%;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		overflow: auto;
+		background-color: #333333;
+		font-size: 1em;
+		transition: all 0.3s ease 0s;;
+	}
+	.site-navigation li {margin-top: 30px;}
+	.menu-burger.active::before {
+		transform: rotate(45deg);
+		top: 9px;
+	}
+	.menu-burger.active::after {
+		transform: rotate(-45deg);
+		bottom: 9px;
+	}
+	.menu-burger.active span {
+		transform: scale(0);
+	}
+	.menu-burger.active p {
+		display: none;
+	}
+	.site-navigation.active {
+		top: 0;
+		transition: all 0.3s ease 0s;
+	}
+	.sidebar-left,
+	.sidebar-right {display: none;}
+	.library {display: none;}
+	.mobile-menu {display: block;}
+	.mobile-navigation {display: none;}
+	.library-label {
+		display: block;
+		padding: 10px 10px 10px 0;
+		width: 100%;
+		border-bottom: 1px dashed #000000;
+		font-size: 1.5em;
+	}
+	.library:checked ~ ul {
+		display: block;
+		padding-left: 20px;
+	}
 }
