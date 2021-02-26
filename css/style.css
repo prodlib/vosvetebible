@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 body {
 	margin: 0;
 	padding: 0;
@@ -25,6 +28,7 @@ input[type="radio"].visually-hidden {
 }
 
 .menu-container {
+	position: fixed;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
@@ -70,7 +74,7 @@ input[type="radio"].visually-hidden {
 
 .logo-container {
   margin: 0 auto;
-  padding: 40px 0 60px 0;
+  padding: 80px 0 60px 0;
   width: 100%;
   display: flex;
   background-color: #ffffff;
@@ -85,13 +89,15 @@ input[type="radio"].visually-hidden {
 	text-align: center;
 	text-decoration: none;
 	color: #000000;
-	font-family: 'Georgia', serif;
 }
 
-.mobile-menu {
+.mobile-menu,
+.mobile-menu-heresy,
+.mobile-menu-prayers,
+.mobile-menu-christian {
 	display: none;
 	padding: 0 10px;
-	margin: 20px 20px 0 20px;
+	margin: 10px 10px 0 10px;
 	border: 1px solid #333333;
 	background-color: #ffffff;
 }
@@ -121,7 +127,6 @@ input[type="radio"].visually-hidden {
 }
 
 .menu-navigation a {
-  font-family: 'Georgia', serif;
   color: #000000;
 }
 
@@ -138,11 +143,12 @@ input[type="radio"].visually-hidden {
   justify-content: space-between;
 }
 
-.orthodoxy-label,
-.answers-label,
-.orthodoxy,
-.answers {
-	display: none;
+.sidebar-left {
+	margin-right: 60px;
+}
+
+.sidebar-right {
+	margin-left: 60px;
 }
 
 .sidebar-left h2,
@@ -165,19 +171,20 @@ input[type="radio"].visually-hidden {
   color: #cc9966;
 }
 
-.main-content {
-	padding: 0 60px;
+.content {
+	padding: 0;
 	max-width: 900px;
   font-size: 18px;
 	box-sizing: border-box;
 }
 
-.main-content h2 {
+.content h2 {
   margin-top: 10px;
   margin-bottom: 20px;
+	line-height: 1.3em;
 }
 
-.main-content p {
+.content p {
   margin-bottom: 25px;
 }
 
@@ -242,7 +249,7 @@ input[type="radio"].visually-hidden {
 	justify-content: flex-start;
 	align-items: center;
   color: #ffffff;
-	font-family: 'PT Sans', 'Verdana', serif;
+	font-family: 'PT Sans', 'Verdana', sans-serif;
 	font-size: 1.2em;
 }
 
@@ -363,7 +370,7 @@ input[type="radio"].visually-hidden {
 @media (max-width:1200px) {
 	.logo-container {
 		background-image: none;
-		padding: 30px 0 30px 0;
+		padding: 70px 0 30px 0;
 	}
 	.site-navigation {padding: 0 30px;}
 	.menu-navigation {padding: 0 30px;}
@@ -373,7 +380,8 @@ input[type="radio"].visually-hidden {
 }
 
 @media (max-width:900px) {
-	.main-content {padding: 0 20px;}
+	.sidebar-left {margin-right: 30px;}
+	.sidebar-right {margin-left: 30px;}
 	.logo-link img {display: none;}
 	.logo-link::before {
 		content: 'Во свете Библии';
@@ -397,16 +405,27 @@ input[type="radio"].visually-hidden {
 		padding: 0;
 		margin-top: 20px;
 	}
-	.logo-container {padding: 70px 0 30px 0;}
-	.logo-link::before {font-size: 2em;}
+	.content {
+		padding: 0 10px;
+		order: 3;
+		margin-top: 10px;
+	}
+	.atantion {padding: 15px;}
+	.logo-container {
+		padding: 60px 0 10px 0;
+		background-color: #f7ebdb;
+	}
+	.logo-link::before {font-size: 1.8em;}
 	.logo-link::after {
-		font-size: 1.1em;
+		font-size: 1em;
 		margin-top: 5px;
 	}
 	.menu-navigation {display: none;}
 	.footer-container {
 		flex-wrap: wrap;
-		padding: 20px;
+		padding: 10px;
+		padding-top: 20px;
+		margin-top: 40px;
 	}
 	.menu-container {
 		position: fixed;
@@ -481,8 +500,12 @@ input[type="radio"].visually-hidden {
 	}
 	.sidebar-left,
 	.sidebar-right {display: none;}
-	.library {display: none;}
-	.mobile-menu {display: block;}
+	.mobile-menu,
+	.mobile-menu-heresy,
+	.mobile-menu-prayers,
+	.mobile-menu-christian {
+		display: block;
+	}
 	.mobile-navigation {
 		display: none;
 		list-style: none;
@@ -493,7 +516,7 @@ input[type="radio"].visually-hidden {
 	}
 	.library-label {
 		display: block;
-		padding: 10px 0;
+		padding: 5px 0;
 		width: 100%;
 		font-size: 1.5em;
 	}
@@ -501,6 +524,7 @@ input[type="radio"].visually-hidden {
 		display: block;
 	}
 	.main-container {
+		margin-top: 10px;
 		flex-direction: column;
 		justify-content: flex-start;
 	}
@@ -509,7 +533,7 @@ input[type="radio"].visually-hidden {
 	.sidebar-left,
 	.sidebar-right {
 		padding: 0 10px;
-		margin: 0 20px 0 20px;
+		margin: 0 10px;
 		border: 1px solid #333333;
 		background-color: #ffffff;
 	}
@@ -520,7 +544,7 @@ input[type="radio"].visually-hidden {
 	.sidebar-right {
 		display: block;
 		order: 2;
-		margin-top: 20px;
+		margin-top: 10px;
 	}
 	.sidebar-list {
 		display: none;
@@ -529,23 +553,24 @@ input[type="radio"].visually-hidden {
 		border-top: 1px dashed #000000;
 		font-size: 1.1em;
 	}
-	.main-content {
-		order: 3;
-		margin-top: 20px;
-	}
-	.orthodoxy,
-	.answers {
-		display: none;
+	.content {
+
 	}
 	.orthodoxy-label,
-	.answers-label {
+	.answers-label,
+	.heresy-label,
+	.prayers-label,
+	.christian-label {
 		display: block;
-		padding: 10px 0;
+		padding: 5px 0;
 		width: 100%;
 		font-size: 1.5em;
 	}
 	.orthodoxy:checked ~ ul,
-	.answers:checked ~ ul {
+	.answers:checked ~ ul,
+	.heresy:checked ~ ul,
+	.prayers:checked ~ ul,
+	.christian:checked ~ ul {
 		display: block;
 	}
 
