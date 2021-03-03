@@ -27,6 +27,26 @@ input[type="radio"].visually-hidden {
 	overflow: hidden;
 }
 
+/* questions */
+.content-title {
+	margin-top: 0;
+	color: #333333;
+}
+
+.question_number {
+	color: #cc9966;
+}
+
+.question_link {
+	text-decoration: none;
+	color: #000000;
+}
+
+.question_link:hover {
+	color: #cc9966;
+	text-decoration: underline;
+}
+
 .menu-container {
 	position: fixed;
 	display: flex;
@@ -46,8 +66,9 @@ input[type="radio"].visually-hidden {
 .menu-burger p {
 	display: block;
 	position: fixed;
-	top: 8px;
-	left: 50px;
+	left: 60px;
+	top: 13px;
+	font-size: 1.2em;
 	color: #ffffff;
 }
 
@@ -92,15 +113,12 @@ input[type="radio"].visually-hidden {
 	color: #000000;
 }
 
-.mobile-menu,
-.mobile-menu-heresy,
-.mobile-menu-prayers,
-.mobile-menu-christian {
+.mobile-menu {
 	display: none;
-	padding: 0 10px;
-	margin: 10px 10px 0 10px;
-	border: 1px solid #333333;
-	background-color: #ffffff;
+}
+
+.mobile-navigation {
+	line-height: 1.8em;
 }
 
 .mobile-navigation a {
@@ -129,10 +147,13 @@ input[type="radio"].visually-hidden {
 
 .menu-navigation a {
   color: #000000;
+	text-decoration: none;
+	border-bottom: 1px #333333 solid;
 }
 
 .menu-navigation a:hover {
   color: #cc9966;
+	border-bottom: 1px #cc9966 solid;
 }
 
 .main-container {
@@ -155,7 +176,8 @@ input[type="radio"].visually-hidden {
 .sidebar-left h2,
 .sidebar-right h2 {
 	font-size: 20px;
-	margin-top: 0;
+	margin-top: 0px;
+	color: #333333;
 }
 
 .sidebar-list {
@@ -180,9 +202,9 @@ input[type="radio"].visually-hidden {
 }
 
 .content h2 {
-  margin-top: 10px;
+  margin-top: 0px;
   margin-bottom: 20px;
-	line-height: 1.3em;
+	line-height: 1.2em;
 }
 
 .content p {
@@ -385,16 +407,18 @@ input[type="radio"].visually-hidden {
 	.sidebar-right {margin-left: 30px;}
 	.logo-link img {display: none;}
 	.logo-link::before {
-		content: 'Во свете Библии';
+		content: '«Во свете Библии»';
 		display: block;
 		font-size: 2.8em;
 		font-weight: bold;
+		color: #333333;
 	}
 	.logo-link::after {
 		content: 'Православный Библейский сайт';
 		display: block;
 		font-size: 1.5em;
 		margin-top: 15px;
+		color: #333333;
 	}
 	.menu-navigation {font-size: 1em;}
 	.site-navigation {font-size: 1em;}
@@ -407,25 +431,24 @@ input[type="radio"].visually-hidden {
 		margin-top: 20px;
 	}
 	.content {
-		padding: 0 10px;
+		padding: 0 15px;
 		order: 3;
-		margin-top: 10px;
 	}
-	.atantion {padding: 15px;}
+	.atantion {padding: 20px;}
 	.logo-container {
-		padding: 60px 0 10px 0;
+		padding: 70px 0 10px 0;
 		background-color: #f7ebdb;
 	}
 	.logo-link::before {font-size: 1.8em;}
 	.logo-link::after {
 		font-size: 1em;
-		margin-top: 5px;
+		margin-top: 0;
 	}
 	.menu-navigation {display: none;}
 	.footer-container {
 		flex-wrap: wrap;
-		padding: 10px;
-		padding-top: 20px;
+		padding: 15px;
+		padding-top: 30px;
 		margin-top: 40px;
 	}
 	.menu-container {
@@ -435,7 +458,7 @@ input[type="radio"].visually-hidden {
 		z-index: 2;
 	}
 	.menu-burger {
-		margin: 0 0 0 10px;
+		margin: 0;
 		display: block;
 		position: relative;
 		width: 30px;
@@ -468,8 +491,9 @@ input[type="radio"].visually-hidden {
 		bottom: 0;
 	}
 	.site-navigation {
-		padding: 10px 0 0 50px;
+		padding: 0 0 0 15px;
 		position: fixed;
+		margin-top: 40px;
 		display: block;
 		top: -100%;
 		left: 0;
@@ -477,10 +501,11 @@ input[type="radio"].visually-hidden {
 		height: 100%;
 		overflow: auto;
 		background-color: #333333;
-		font-size: 1em;
+		font-size: 1.2em;
 		transition: all 0.3s ease 0s;;
 	}
 	.site-navigation li {margin-top: 30px;}
+	.menu-container {padding: 15px;}
 	.menu-burger.active::before {
 		transform: rotate(45deg);
 		top: 9px;
@@ -501,12 +526,13 @@ input[type="radio"].visually-hidden {
 	}
 	.sidebar-left,
 	.sidebar-right {display: none;}
-	.mobile-menu,
-	.mobile-menu-heresy,
-	.mobile-menu-prayers,
-	.mobile-menu-christian {
+	.mobile-menu {
 		display: block;
-	}
+		padding: 0 10px;
+		margin: 10px 15px 0;
+		border: 1px solid #333333;
+		background-color: #ffffff;
+		}
 	.mobile-navigation {
 		display: none;
 		list-style: none;
@@ -523,39 +549,6 @@ input[type="radio"].visually-hidden {
 	}
 	.library:checked ~ ul {
 		display: block;
-	}
-	.main-container {
-		margin-top: 10px;
-		flex-direction: column;
-		justify-content: flex-start;
-	}
-	.sidebar-left h2,
-	.sidebar-right h2 {display: none;}
-	.sidebar-left,
-	.sidebar-right {
-		padding: 0 10px;
-		margin: 0 10px;
-		border: 1px solid #333333;
-		background-color: #ffffff;
-	}
-	.sidebar-left {
-		display: block;
-		order: 1;
-	}
-	.sidebar-right {
-		display: block;
-		order: 2;
-		margin-top: 10px;
-	}
-	.sidebar-list {
-		display: none;
-		margin: 0 0 10px 0;
-		padding-top: 10px;
-		border-top: 1px dashed #000000;
-		font-size: 1.1em;
-	}
-	.content {
-
 	}
 	.orthodoxy-label,
 	.answers-label,
@@ -574,5 +567,4 @@ input[type="radio"].visually-hidden {
 	.christian:checked ~ ul {
 		display: block;
 	}
-
 }

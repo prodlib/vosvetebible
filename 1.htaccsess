@@ -1,0 +1,4 @@
+AddDefaultCharset UTF-8
+
+RewriteRule ^questions?$ questions.php [NC,L]
+RewriteRule ^question?$ question.php [NC,L]
